@@ -103,33 +103,33 @@ public class cache {
         cacheBlock.elementAt(index).dirty = true;
     } //write function will update the value in block; addblock if necessary
     
-    public static void main(String[] args) {
-        Memory mem = new Memory();
-        mem.initialize();
-        cache test = new cache();
-        for(int i = 0; i < 2048; i++) {   
-            mem.set(i, (short)i);
-        }
-        System.out.println("read address 555: "+ test.read(555, mem));
-        System.out.println("read address 100: "+ test.read(100, mem));
-        System.out.println("read address 1: "+ test.read(1, mem));
-        System.out.println("read address 15: "+ test.read(15, mem));
-        System.out.println("read address 55: "+ test.read(55, mem));
-        System.out.println("read address 77: "+ test.read(77, mem));
-        System.out.println("read address 111: "+ test.read(111, mem));
-        System.out.println("read address 222: "+ test.read(222, mem));
-        System.out.println("read address 333: "+ test.read(333, mem));
-        System.out.println("read address 444: "+ test.read(444, mem));
-        System.out.println("read address 599: "+ test.read(599, mem));
-        System.out.println("read address 666: "+ test.read(666, mem));
-        System.out.println("read address 690: "+ test.read(690, mem));
-        System.out.println("read address 777: "+ test.read(777, mem));
-        System.out.println("read address 888: "+ test.read(888, mem));
-        System.out.println("read address 1000: "+ test.read(1000, mem));
-        test.write(555, (short) 9999, mem);
-        System.out.println("read address 1111: "+ test.read(1111, mem));
-        System.out.println("value at address 555 in memory is: " + mem.get(555));
-        test.printcontent();
-    }
+//    public static void main(String[] args) {
+//        Memory mem = new Memory();
+//        mem.initialize();
+//        cache test = new cache();
+//        for(int i = 0; i < 2048; i++) {   
+//            mem.set(i, (short)i);
+//        }
+//        System.out.println("read address 555: "+ test.read(555, mem));
+//        System.out.println("read address 100: "+ test.read(100, mem));
+//        System.out.println("read address 1: "+ test.read(1, mem));
+//        System.out.println("read address 15: "+ test.read(15, mem));
+//        System.out.println("read address 55: "+ test.read(55, mem));
+//        System.out.println("read address 77: "+ test.read(77, mem));
+//        System.out.println("read address 111: "+ test.read(111, mem));
+//        System.out.println("read address 222: "+ test.read(222, mem));
+//        System.out.println("read address 333: "+ test.read(333, mem));
+//        System.out.println("read address 444: "+ test.read(444, mem));
+//        System.out.println("read address 599: "+ test.read(599, mem));
+//        System.out.println("read address 666: "+ test.read(666, mem));
+//        System.out.println("read address 690: "+ test.read(690, mem));
+//        System.out.println("read address 777: "+ test.read(777, mem));
+//        System.out.println("read address 888: "+ test.read(888, mem));
+//        System.out.println("read address 1000: "+ test.read(1000, mem));
+//        test.write(555, (short) 9999, mem);
+//        System.out.println("read address 1111: "+ test.read(1111, mem));
+//        System.out.println("value at address 555 in memory is: " + mem.get(555));
+//        test.printcontent();
+//    }
 }
     
