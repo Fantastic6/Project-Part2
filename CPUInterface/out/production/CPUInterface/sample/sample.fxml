@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="CENTER" gridLinesVisible="true" hgap="10.0" prefHeight="480.0" prefWidth="680.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <children>
+    <VBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <children>
+        <HBox alignment="CENTER" prefHeight="148.0" prefWidth="680.0">
+          <children>
+            <VBox alignment="CENTER" prefHeight="148.0" prefWidth="680.0" HBox.hgrow="ALWAYS">
+              <children>
+                <HBox id="x" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                  <children>
+                    <Label text="Address">
+                      <font>
+                        <Font size="14.0" fx:id="x5" />
+                      </font>
+                    </Label>
+                    <TextField fx:id="TxtAddress" depthTest="INHERIT" disable="false" editable="true" mouseTransparent="false" pickOnBounds="false" prefHeight="25.0" prefWidth="140.0" promptText="Enter here" text="">
+                      <HBox.margin>
+                        <Insets right="5.0" fx:id="x8" />
+                      </HBox.margin>
+                    </TextField>
+                    <Button fx:id="btnSSS" mnemonicParsing="false" prefHeight="40.0" prefWidth="237.0" text="Single step switch">
+                      <font>
+                        <Font name="System Bold" size="12.0" fx:id="x1" />
+                      </font>
+                    </Button>
+                    <Button fx:id="btnDisplay" font="$x1" mnemonicParsing="false" prefHeight="40.0" text="Display">
+                      <HBox.margin>
+                        <Insets left="5.0" fx:id="x9" />
+                      </HBox.margin>
+                    </Button>
+                  </children>
+                  <padding>
+                    <Insets top="15.0" />
+                  </padding>
+                  <VBox.margin>
+                    <Insets fx:id="x2" />
+                  </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="74.0" prefWidth="680.0" spacing="2.0" VBox.margin="$x2" VBox.vgrow="ALWAYS">
+                  <children>
+                    <CheckBox id="" fx:id="Inst_B32768" mnemonicParsing="false" text="16" />
+                    <CheckBox id="" fx:id="Inst_B16384" mnemonicParsing="false" text="15" />
+                    <CheckBox id="" fx:id="Inst_B8192" mnemonicParsing="false" text="14" />
+                    <CheckBox id="" fx:id="Inst_B4096" mnemonicParsing="false" text="13" />
+                    <CheckBox id="" fx:id="Inst_B2048" mnemonicParsing="false" text="12" />
+                    <CheckBox id="" fx:id="Inst_B1024" mnemonicParsing="false" text="11" />
+                    <CheckBox id="" fx:id="Inst_B512" mnemonicParsing="false" text="10" />
+                    <CheckBox id="" fx:id="Inst_B256" mnemonicParsing="false" text="9" />
+                    <CheckBox id="" fx:id="Inst_B128" mnemonicParsing="false" text="8" />
+                    <CheckBox id="" fx:id="Inst_B64" mnemonicParsing="false" text="7" />
+                    <CheckBox id="" fx:id="Inst_B32" mnemonicParsing="false" text="6" />
+                    <CheckBox id="" fx:id="Inst_B16" mnemonicParsing="false" text="5" />
+                    <CheckBox id="" fx:id="Inst_B8" mnemonicParsing="false" text="4" />
+                    <CheckBox id="" fx:id="Inst_B4" mnemonicParsing="false" text="3" />
+                    <CheckBox id="" fx:id="Inst_B2" mnemonicParsing="false" text="2" />
+                    <CheckBox id="" fx:id="Inst_B1" mnemonicParsing="false" text="1" />
+                    <Button id="" fx:id="setBtnInst" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="39.0" text="SET" HBox.hgrow="ALWAYS">
+                      <font>
+                        <Font name="System Bold" size="11.0" fx:id="x3" />
+                      </font>
+                    </Button>
+                    <TextField fx:id="TxtValInst" alignment="CENTER" prefHeight="25.0" prefWidth="49.0" promptText="#num">
+                      <HBox.margin>
+                        <Insets left="2.0" />
+                      </HBox.margin>
+                    </TextField>
+                  </children>
+                  <padding>
+                    <Insets fx:id="x2" />
+                  </padding>
+                </HBox>
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+          <children>
+            <VBox alignment="CENTER" prefWidth="-1.0" spacing="20.0" HBox.hgrow="ALWAYS">
+              <children>
+                <HBox fx:id="R0HBox" alignment="CENTER" spacing="3.5" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Label contentDisplay="CENTER" font="$x5" text="R0">
+                      <HBox.margin>
+                        <Insets right="5.0" fx:id="x8" />
+                      </HBox.margin>
+                    </Label>
+                    <CheckBox id="" fx:id="R0_B32768" mnemonicParsing="false" text="16" />
+                    <CheckBox id="" fx:id="R0_B16384" mnemonicParsing="false" text="15" />
+                    <CheckBox id="" fx:id="R0_B8192" mnemonicParsing="false" text="14" />
+                    <CheckBox id="" fx:id="R0_B4096" mnemonicParsing="false" text="13" />
+                    <CheckBox id="" fx:id="R0_B2048" mnemonicParsing="false" text="12" />
+                    <CheckBox id="" fx:id="R0_B1024" mnemonicParsing="false" text="11" />
+                    <CheckBox id="" fx:id="R0_B512" mnemonicParsing="false" text="10" />
+                    <CheckBox id="" fx:id="R0_B256" mnemonicParsing="false" text="9" />
+                    <CheckBox id="" fx:id="R0_B128" mnemonicParsing="false" text="8" />
+                    <CheckBox id="" fx:id="R0_B64" mnemonicParsing="false" text="7" />
+                    <CheckBox id="" fx:id="R0_B32" mnemonicParsing="false" text="6" />
+                    <CheckBox id="" fx:id="R0_B16" mnemonicParsing="false" text="5" />
+                    <CheckBox id="" fx:id="R0_B8" mnemonicParsing="false" text="4" />
+                    <CheckBox id="" fx:id="R0_B4" mnemonicParsing="false" text="3" />
+                    <CheckBox id="" fx:id="R0_B2" mnemonicParsing="false" text="2" />
+                    <CheckBox id="" fx:id="R0_B1" mnemonicParsing="false" text="1" />
+                    <Button id="" fx:id="setR0Btn" font="$x3" mnemonicParsing="false" prefHeight="29.0" text="SET" />
+                    <TextField fx:id="LabelValR0" prefHeight="25.0" prefWidth="39.0" promptText="R0" />
+                  </children>
+                  <padding>
+                    <Insets fx:id="x2" />
+                  </padding>
+                </HBox>
+                <HBox fx:id="R1HBox" alignment="CENTER" spacing="3.5" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Label contentDisplay="CENTER" font="$x5" text="R1" HBox.margin="$x8" />
+                    <CheckBox id="" fx:id="R1_B32768" mnemonicParsing="false" text="16" />
+                    <CheckBox id="" fx:id="R1_B16384" mnemonicParsing="false" text="15" />
+                    <CheckBox id="" fx:id="R1_B8192" mnemonicParsing="false" text="14" />
+                    <CheckBox id="" fx:id="R1_B4096" mnemonicParsing="false" text="13" />
+                    <CheckBox id="" fx:id="R1_B2048" mnemonicParsing="false" text="12" />
+                    <CheckBox id="" fx:id="R1_B1024" mnemonicParsing="false" text="11" />
+                    <CheckBox id="" fx:id="R1_B512" mnemonicParsing="false" text="10" />
+                    <CheckBox id="" fx:id="R1_B256" mnemonicParsing="false" text="9" />
+                    <CheckBox id="" fx:id="R1_B128" mnemonicParsing="false" text="8" />
+                    <CheckBox id="" fx:id="R1_B64" mnemonicParsing="false" text="7" />
+                    <CheckBox id="" fx:id="R1_B32" mnemonicParsing="false" text="6" />
+                    <CheckBox id="" fx:id="R1_B16" mnemonicParsing="false" text="5" />
+                    <CheckBox id="" fx:id="R1_B8" mnemonicParsing="false" text="4" />
+                    <CheckBox id="" fx:id="R1_B4" mnemonicParsing="false" text="3" />
+                    <CheckBox id="" fx:id="R1_B2" mnemonicParsing="false" text="2" />
+                    <CheckBox id="" fx:id="R1_B1" mnemonicParsing="false" text="1" />
+                    <Button id="" fx:id="setR1Btn" font="$x3" mnemonicParsing="false" prefHeight="29.0" text="SET" />
+                    <TextField fx:id="LabelValR1" prefHeight="25.0" prefWidth="39.0" promptText="R1" />
+                  </children>
+                  <padding>
+                    <Insets fx:id="x2" />
+                  </padding>
+                </HBox>
+                <HBox fx:id="R2HBox" alignment="CENTER" spacing="3.5" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Label contentDisplay="CENTER" font="$x5" text="R2" HBox.margin="$x8" />
+                    <CheckBox id="" fx:id="R2_B32768" mnemonicParsing="false" text="16" />
+                    <CheckBox id="" fx:id="R2_B16384" mnemonicParsing="false" text="15" />
+                    <CheckBox id="" fx:id="R2_B8192" mnemonicParsing="false" text="14" />
+                    <CheckBox id="" fx:id="R2_B4096" mnemonicParsing="false" text="13" />
+                    <CheckBox id="" fx:id="R2_B2048" mnemonicParsing="false" text="12" />
+                    <CheckBox id="" fx:id="R2_B1024" mnemonicParsing="false" text="11" />
+                    <CheckBox id="" fx:id="R2_B512" mnemonicParsing="false" text="10" />
+                    <CheckBox id="" fx:id="R2_B256" mnemonicParsing="false" text="9" />
+                    <CheckBox id="" fx:id="R2_B128" mnemonicParsing="false" text="8" />
+                    <CheckBox id="" fx:id="R2_B64" mnemonicParsing="false" text="7" />
+                    <CheckBox id="" fx:id="R2_B32" mnemonicParsing="false" text="6" />
+                    <CheckBox id="" fx:id="R2_B16" mnemonicParsing="false" text="5" />
+                    <CheckBox id="" fx:id="R2_B8" mnemonicParsing="false" text="4" />
+                    <CheckBox id="" fx:id="R2_B4" mnemonicParsing="false" text="3" />
+                    <CheckBox id="" fx:id="R2_B2" mnemonicParsing="false" text="2" />
+                    <CheckBox id="" fx:id="R2_B1" mnemonicParsing="false" text="1" />
+                    <Button id="" fx:id="setR2Btn" font="$x3" mnemonicParsing="false" prefHeight="29.0" text="SET" />
+                    <TextField fx:id="LabelValR2" prefHeight="25.0" prefWidth="39.0" promptText="R2" />
+                  </children>
+                  <padding>
+                    <Insets fx:id="x2" />
+                  </padding>
+                </HBox>
+                <HBox fx:id="R3HBox" alignment="CENTER" spacing="3.5" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Label contentDisplay="CENTER" font="$x5" text="R3" HBox.margin="$x8" />
+                    <CheckBox id="" fx:id="R3_B32768" mnemonicParsing="false" text="16" />
+                    <CheckBox id="" fx:id="R3_B16384" mnemonicParsing="false" text="15" />
+                    <CheckBox id="" fx:id="R3_B8192" mnemonicParsing="false" text="14" />
+                    <CheckBox id="" fx:id="R3_B4096" mnemonicParsing="false" text="13" />
+                    <CheckBox id="" fx:id="R3_B2048" mnemonicParsing="false" text="12" />
+                    <CheckBox id="" fx:id="R3_B1024" mnemonicParsing="false" text="11" />
+                    <CheckBox id="" fx:id="R3_B512" mnemonicParsing="false" text="10" />
+                    <CheckBox id="" fx:id="R3_B256" mnemonicParsing="false" text="9" />
+                    <CheckBox id="" fx:id="R3_B128" mnemonicParsing="false" text="8" />
+                    <CheckBox id="" fx:id="R3_B64" mnemonicParsing="false" text="7" />
+                    <CheckBox id="" fx:id="R3_B32" mnemonicParsing="false" text="6" />
+                    <CheckBox id="" fx:id="R3_B16" mnemonicParsing="false" text="5" />
+                    <CheckBox id="" fx:id="R3_B8" mnemonicParsing="false" text="4" />
+                    <CheckBox id="" fx:id="R3_B4" mnemonicParsing="false" text="3" />
+                    <CheckBox id="" fx:id="R3_B2" mnemonicParsing="false" text="2" />
+                    <CheckBox id="" fx:id="R3_B1" mnemonicParsing="false" text="1" />
+                    <Button id="" fx:id="setR3Btn" font="$x3" mnemonicParsing="false" prefHeight="29.0" text="SET" />
+                    <TextField fx:id="LabelValR3" prefHeight="25.0" prefWidth="39.0" promptText="R3" />
+                  </children>
+                  <padding>
+                    <Insets fx:id="x2" />
+                  </padding>
+                </HBox>
+              </children>
+              <HBox.margin>
+                <Insets bottom="10.0" top="10.0" />
+              </HBox.margin>
+            </VBox>
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+          </padding>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="74.0" prefWidth="680.0" spacing="15.0" VBox.vgrow="ALWAYS">
+          <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" font="$x5" prefWidth="20.0" text="PC" HBox.hgrow="ALWAYS">
+              <HBox.margin>
+                <Insets fx:id="x2" />
+              </HBox.margin>
+            </Label>
+            <CheckBox id="" fx:id="PC_B2048" mnemonicParsing="false" text="12" />
+            <CheckBox id="" fx:id="PC_B1024" mnemonicParsing="false" text="11" />
+            <CheckBox id="" fx:id="PC_B512" mnemonicParsing="false" text="10" />
+            <CheckBox id="" fx:id="PC_B256" mnemonicParsing="false" text="9" />
+            <CheckBox id="" fx:id="PC_B128" mnemonicParsing="false" text="8" />
+            <CheckBox id="" fx:id="PC_B64" mnemonicParsing="false" text="7" />
+            <CheckBox id="" fx:id="PC_B32" mnemonicParsing="false" text="6" />
+            <CheckBox id="" fx:id="PC_B16" mnemonicParsing="false" text="5" />
+            <CheckBox id="" fx:id="PC_B8" mnemonicParsing="false" text="4" />
+            <CheckBox id="" fx:id="PC_B4" mnemonicParsing="false" text="3" />
+            <CheckBox id="" fx:id="PC_B2" mnemonicParsing="false" text="2" />
+            <CheckBox id="" fx:id="PC_B1" mnemonicParsing="false" text="1" />
+            <Button id="" fx:id="setPCBtn" font="$x3" mnemonicParsing="false" prefHeight="29.0" text="SET" />
+            <Label id="" fx:id="LabelValPC" alignment="CENTER_LEFT" text="0">
+              <font>
+                <Font size="12.0" fx:id="x4" />
+              </font>
+              <HBox.margin>
+                <Insets fx:id="x2" />
+              </HBox.margin>
+            </Label>
+          </children>
+          <padding>
+            <Insets fx:id="x2" />
+          </padding>
+        </HBox>
+        <HBox alignment="TOP_CENTER" prefHeight="48.0" prefWidth="680.0" spacing="7.0">
+          <children>
+            <Label font="$x5" text="I1">
+              <HBox.margin>
+                <Insets top="5.0" fx:id="x6" />
+              </HBox.margin>
+            </Label>
+            <TextField id="txtIVal" fx:id="txtI1Val" alignment="CENTER" editable="true" prefHeight="29.0" prefWidth="49.0" promptText="XI1" text="">
+              <HBox.margin>
+                <Insets fx:id="x2" />
+              </HBox.margin>
+            </TextField>
+            <Button fx:id="setI1btn" font="$x3" mnemonicParsing="false" prefHeight="29.0" text="SET">
+              <HBox.margin>
+                <Insets right="15.0" fx:id="x7" />
+              </HBox.margin>
+            </Button>
+            <Label font="$x5" text="I2" HBox.margin="$x6" />
+            <TextField fx:id="txtI2Val" alignment="CENTER" prefHeight="29.0" prefWidth="49.0" promptText="XI2" text="">
+              <HBox.margin>
+                <Insets fx:id="x2" />
+              </HBox.margin>
+            </TextField>
+            <Button fx:id="setI2btn" font="$x3" mnemonicParsing="false" prefHeight="29.0" text="SET" HBox.margin="$x7" />
+            <Label font="$x5" text="I3" HBox.margin="$x6" />
+            <TextField fx:id="txtI3Val" alignment="CENTER" prefHeight="29.0" prefWidth="49.0" promptText="XI3" text="">
+              <HBox.margin>
+                <Insets fx:id="x2" />
+              </HBox.margin>
+            </TextField>
+            <Button fx:id="setI3btn" font="$x3" mnemonicParsing="false" prefHeight="29.0" text="SET" />
+          </children>
+          <padding>
+            <Insets bottom="10.0" top="10.0" />
+          </padding>
+        </HBox>
+        <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+          <children>
+            <TextField fx:id="terminalTF" prefHeight="45.0" prefWidth="680.0" text="&gt;_" HBox.hgrow="ALWAYS">
+              <HBox.margin>
+                <Insets fx:id="x2" />
+              </HBox.margin>
+            </TextField>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+</GridPane>
