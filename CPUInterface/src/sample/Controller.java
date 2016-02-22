@@ -8,10 +8,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 
+import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -33,7 +37,7 @@ public class Controller implements Initializable {
     Button setR0Btn, setR1Btn, setR2Btn, setR3Btn, setBtnInst, btnDisplay, setPCBtn, btnSSS, setI1btn, setI2btn, setI3btn;
 
     @FXML
-    TextField TxtValInst, TxtAddress, txtI1Val, txtI2Val, txtI3Val, LabelValR0, LabelValR1, LabelValR2, LabelValR3;
+    TextField TxtValInst, TxtAddress, txtI1Val, txtI2Val, txtI3Val, LabelValR0, LabelValR1, LabelValR2, LabelValR3, terminalTF;
 
     @FXML
     Label LabelValPC;
@@ -63,6 +67,42 @@ public class Controller implements Initializable {
             }
         });*/
         //R1HBox.setOnDragOver();
+        terminalTF.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                List<String> input = new ArrayList<String>();
+                List<String> ISAList = new ArrayList<String>();
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    Translate translate;
+                    if(terminalTF.getText().trim().split(" ")[0].equals("run")){
+                        try (BufferedReader br = new BufferedReader(new FileReader(new File("" + System.getProperty("user.dir").trim()
+                                + "//" + terminalTF.getText().trim().split(" ")[1])))) {
+                            String currLine = "";
+                            while ((currLine = br.readLine()) != null) {
+                                translate = new Translate(currLine);
+                                translate.stringBuilder();
+//                                ISAList.add(stringToByte);
+                            }
+                            /*for (int i = 0; i < ISAList.size(); i++) {
+                                terminalTF.setText("");
+                                terminalTF.setPromptText((i+1) + " - " + ISAList.get(i));
+                                TxtValInst.requestFocus();
+                            }*/
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }else{
+                        translate = new Translate(terminalTF.getText().trim());
+                        translate.stringBuilder();
+                    }
+//                    input.add([0]);
+//                    for (int i =0; i < input.size(); i++)
+//                        terminalTF.setText(input.get(0));
+                }
+            }
+        });
         EventHandler eventHandlerR0Line = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
