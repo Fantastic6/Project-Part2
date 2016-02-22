@@ -54,7 +54,7 @@ Jump and save address at GPR[3].
 3. Look at PC. It should be 10 + 16 = 26.  
 4. Look at R[3]. It should be 11. 
 
-# RFS * Not working fully!
+# RFS 
 
 Return from subroutine with R[0] being the intermedate and PC being the contents of R[3].
 
@@ -87,7 +87,7 @@ Instruction: 010001 00 00 0 00011 (17411)
 3. Set GPR[0] = 11. 
 4. Look at PC. It should be 3. 
 
-# MLT
+# MLT * Not working fully! Check GPR[0], GPR[1]
 
 Instruction: 010100 00 10 0 00000 (20608)
 
@@ -96,7 +96,7 @@ Instruction: 010100 00 10 0 00000 (20608)
 3. Set GPR[0] = 12. Set GPR[2] = 3. 
 4. GPR[0], GPR[1] should be 36 and 36 respectively. 
 
-# DVD
+# DVD * Not working fully! Check modulo operation
 
 Instruction: 010101 00 10 0 00000 (21632)
 
