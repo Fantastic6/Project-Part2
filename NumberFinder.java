@@ -1,4 +1,4 @@
-package com.unrealkz;
+//package com.unrealkz;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ public class NumberFinder {
 //        Vector myVector = new Vector();
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("Enter a number: ");
-        int arraySize = 5;
+        int arraySize = 20;
         int uArray[] = new int[arraySize];
         while (counter < arraySize) {
             int n = reader.nextInt();
@@ -32,6 +32,7 @@ public class NumberFinder {
             }
         }
         int yourNumber = uArray[SearchedNumIdx];
+        System.out.println("The number you entered is " + uNumber);
         System.out.println("The closest number is "+yourNumber);
     }
 }
