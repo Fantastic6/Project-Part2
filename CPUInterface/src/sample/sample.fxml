@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="CENTER" gridLinesVisible="true" hgap="10.0" prefHeight="480.0" prefWidth="680.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+<GridPane alignment="CENTER" gridLinesVisible="true" hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="15.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <children>
     <VBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
       <children>
@@ -42,7 +42,7 @@
                     <Insets top="15.0" />
                   </padding>
                   <VBox.margin>
-                    <Insets fx:id="x2" />
+                    <Insets fx:id="" />
                   </VBox.margin>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="74.0" prefWidth="680.0" spacing="2.0" VBox.margin="$x2" VBox.vgrow="ALWAYS">
@@ -68,14 +68,14 @@
                         <Font name="System Bold" size="11.0" fx:id="x3" />
                       </font>
                     </Button>
-                    <TextField fx:id="TxtValInst" alignment="CENTER" prefHeight="25.0" prefWidth="49.0" promptText="#num">
+                    <TextField fx:id="TxtValInst" prefHeight="25.0" prefWidth="49.0" promptText="#num">
                       <HBox.margin>
                         <Insets left="2.0" />
                       </HBox.margin>
                     </TextField>
                   </children>
                   <padding>
-                    <Insets fx:id="x2" />
+                    <Insets fx:id="" />
                   </padding>
                 </HBox>
               </children>
@@ -90,7 +90,7 @@
                   <children>
                     <Label contentDisplay="CENTER" font="$x5" text="R0">
                       <HBox.margin>
-                        <Insets right="5.0" fx:id="x8" />
+                        <Insets fx:id="" right="5.0" />
                       </HBox.margin>
                     </Label>
                     <CheckBox id="" fx:id="R0_B32768" mnemonicParsing="false" text="16" />
@@ -204,7 +204,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
           </padding>
         </HBox>
-        <HBox alignment="CENTER" prefHeight="74.0" prefWidth="680.0" spacing="15.0" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER" prefHeight="74.0" prefWidth="680.0" spacing="15.0">
           <children>
             <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" font="$x5" prefWidth="20.0" text="PC" HBox.hgrow="ALWAYS">
               <HBox.margin>
@@ -273,12 +273,15 @@
             <Insets bottom="10.0" top="10.0" />
           </padding>
         </HBox>
-        <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+        <HBox alignment="BOTTOM_CENTER">
           <children>
-            <TextField fx:id="terminalTF" prefHeight="45.0" prefWidth="680.0" text="&gt;_" HBox.hgrow="ALWAYS">
+            <TextField fx:id="terminalTF" promptText="&gt;_" HBox.hgrow="ALWAYS">
               <HBox.margin>
                 <Insets fx:id="x2" />
               </HBox.margin>
+                     <font>
+                        <Font name="Consolas" size="24.0" />
+                     </font>
             </TextField>
           </children>
         </HBox>
