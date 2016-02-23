@@ -1,5 +1,8 @@
 # Test Instructions 
 
+javac sample/Memory.java sample/cache.java sample/CPU.java
+java sample.CPU
+
 # JZ
 
 Instruction: 001010 01 00 1 00110 (10534)
@@ -140,3 +143,31 @@ Instruction: 11001 00 10 0 00000 (25728)
 2. Set PC = 10.
 3. Set GPR[0] = 3. 
 4. Check GPR[0]. It should be 0. 
+
+# IN
+
+Instruction: 111101 00 00 0 00000 (62464)
+
+Inputs a character from console keyboard to R[0].
+
+// interface needs to have a console keyboard
+1. Prompt for char. User types it in and it is stored. 
+2. Check R[0]. It should be equal to the char. ('1' -> 49)
+
+# OUT
+
+Instruction: 111110 00 00 0 00000 (63488)
+
+Outputs the character from R[0] to the console printer. 
+
+1. This should print out whati s stored in R[0]. 
+
+# CHK
+
+Instruction: 111111 00 00 0 00000 (64512)
+
+Checks the device register and moves that status to register. 
+
+1. Need to get device status from interface.
+
+

@@ -46,6 +46,7 @@ public class CPU
 
 		//find the opcode
 		int opcode = ISR >> 10;
+		opcode = opcode & 0x3F;
 		System.out.println("opcode is " + opcode);
 
 		// create an array for the parameters
@@ -63,7 +64,7 @@ public class CPU
 
 		
 		// use opcode to figure out what instruction to run
-
+		char userInput = ' ';
 		switch(opcode)
 		{
 			case 1: 
@@ -142,6 +143,15 @@ public class CPU
             case 42:
                 stx(parameters[2], parameters[4], parameters[3], cache);
                 break;
+            case 61:
+            	in(parameters[2], parameters[4]);
+            	break;
+            case 62:
+            	out(parameters[2], parameters[4]);
+            	break;
+            case 63:
+            	chk(parameters[2], parameters[4]);
+            	break;
 			default:
 				break;
 		}
@@ -200,6 +210,9 @@ public class CPU
 			case 32:
 			case 41:
 			case 42:
+			case 61:
+			case 62:
+			case 63:
 				GPRValue = (instruction & 0x3FF) >> 8;
 				IRValue = (instruction & 0xFF) >> 6;
 				IAValue = (instruction & 0x3F) >> 5;
@@ -494,35 +507,41 @@ public class CPU
 			GPR[Rx] = (short) ((GPR[Rx] << count) | (GPR[Rx] >> (16 - count)));
 		}
 	}// this function does not work.
-/*	
-	public static void in(int R, int devId, short[] GPR)
+
+	private void in(int R, int devId)
 	{
-		//Scanner reader = new Scanner(System.in);
-		char c = '0';
-		try
-		{
-			c = (char) System.in.read();
-		}
-		catch (IOException io)
-		{
-
-		}
-
+		// call a helper method to get user input
+		char c = getUserInput();
 		// move the input to register
+		int value = (int) c;
+
+
+		System.out.println("userInput: " + c);
 		GPR[R] = (short) c;
 	}
 
-	public static void out(int R, int devId, short[] GPR)
+	private void out(int R, int devId)
 	{
-		//Scanner reader = new Scanner(System.in);
-		System.out.println(GPR[R]);
+		// print out whatever is inside R[R]
+		System.out.println( (char) GPR[R]);
 	}
-*/
-	//public static void chk(int R, int devId, short[] GPR)
-	//{
-		//Scanner reader = new Scanner(System.in);
-	//	GPR[R] = (short) devId;
-	//}
+
+	private void chk(int R, int devId)
+	{
+		if (devId == 0)
+		{
+			short deviceStatus = 0;
+			// check the console keyboard
+			GPR[R] = deviceStatus;
+		}
+		else if (devId == 1)
+		{
+			short deviceStatus = 0;
+			// check the console printer
+			GPR[R] = deviceStatus;
+		}
+		
+	}
 
 
 	
@@ -644,6 +663,11 @@ public class CPU
    		CC[index] = value;
    	}
 
+   	private char getUserInput()
+	{
+		return '1';
+	}
+
     public static void main(String [] args)
 	{
 		//Memory memory = new Memory();
@@ -658,7 +682,7 @@ public class CPU
 		CPU cpu = new CPU();
 		//cpu.test_jz(cache);
 		//cpu.test_jne(cache);
-		cpu.test_jcc(cache);
+		//cpu.test_jcc(cache);
 		//cpu.test_jma(cache);
 		//cpu.test_jsr(cache);
 		//cpu.test_rfs(cache);
@@ -671,6 +695,8 @@ public class CPU
 		//cpu.test_and(cache);
 		//cpu.test_or(cache);
 		//cpu.test_not(cache);
+		//cpu.test_in(cache);
+		cpu.test_out(cache);
 		
 	}
 
@@ -889,6 +915,29 @@ public class CPU
 		process_instruction(10, cache);
 		System.out.println("GPR[0]: " + getGPRValue(0));
 		
+	}
+
+	public void test_in(cache cache)
+	{
+		
+		int instruction = 62464;
+		cache.write(10, (short) instruction);
+		
+		process_instruction(10, cache);
+		System.out.println("GPR[0]: " + getGPRValue(0));
+		
+	}
+
+	public void test_out(cache cache)
+	{
+		
+		int instruction = 63488;
+		cache.write(10, (short) instruction);
+
+		// sample char = 'A'
+		short GPRValue0 = 65;
+		setGPRValue(0, GPRValue0);
+		process_instruction(10, cache);	
 	}
 	
 }
