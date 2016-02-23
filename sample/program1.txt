@@ -69,61 +69,63 @@ SMR 1, 0, 1021[,1]
 # 18. Store the difference into memory
 STR 1, 0, 1022[,0]
 
+[[[# 19.store the index of the searching number
+STR 3, 0, 1024[,0]]]] have to discuse
 ------------------------------------------------------
-# store the counter
-# store the index for each of the twenty numbers
 
+# 19. Store the counter
 LDR 2, 0, 19[,0]
 
+# 20. Store the index for each of the twenty numbers
 LDR 3, 0, 1002[,0]
 
-# 19. Load user's number into R[0] 
+------------------------------------------------------
+
+# 21. Load user's number into R[0] 
 LDR 0, 0, 1021[,0]
 
-# 20. Subtract 1002 (user's 20 numbers) from R[0] (user's number)
+# 22. Subtract 1002 (user's 20 numbers) from R[0] (user's number)
 SMR 0, 0, 1002[,1]
 
-# 21. Jump if 0 to end and print out the user's number 
+# 23. Jump if 0 to end and print out the user's number 
 JZ 0, 0, (end of code)[,1]
 
-# 22. Jump on greater than or equal to 0 (difference is positive)
+# 24. Jump on greater than or equal to 0 (difference is positive)
 JGE 0, 0, (somewhere further down)[,1]
 
-# 23. Subtract 1021 (user's number) from R[1] (user's 20 numbers)
+# 25. Subtract 1021 (user's number) from R[1] (user's 20 numbers)
 SMR 1, 0, 1021[,1]
 
-# 24. Store the difference into memory
+# 26. Store the difference into memory
 STR 1, 0, 1023[,0]
 
 --------------------------------------------------------
 
-# 25. Load minimum difference into R[0]
+# 27. Load minimum difference into R[0]
 LDR 0, 0, 1022[,0]
 
-# 26. Subtract 1023 (second difference) from R[0] (minimum difference)
+# 28. Subtract 1023 (second difference) from R[0] (minimum difference)
 SMR 0, 0, 1023[,1]
 
-# 28. counter
+# 29. counter
 AIR 2, 1
 AIR 3, 1
 
-# 27. Jump on greater than 0 (minimum difference is larger)
-JGE 0, 0, (29)[,1]
-
-
-
-# 28. 
-JNE 2, 0, 19[,1]
-
-# 29. 
-LDR 0, 0, 1023[,0]
-
-# 30. override minimum difference with 
-STR 0, 0, 1022[,0]
-
-
-# store the index of the searching number
+# 30. Jump on greater than 0 (minimum difference is larger)
+JGE 0, 0, (32)[,1]
 
 # 31. 
-JNE 2, 0, 19[,1]
+JNE 2, 0, 21[,1]
+
+# 32. 
+LDR 0, 0, 1023[,0]
+
+# 33. override minimum difference with 
+STR 0, 0, 1022[,0]
+
+# 34.store the index of the searching number
+STR 3, 0, 1024[,0]
+
+# 35. 
+JNE 2, 0, 21[,1]
 
