@@ -1,0 +1,60 @@
+# Program 1
+
+1. Read in 20 numbers from keyboard.
+2. Print the numbers to the console printer.
+3. Request a number from the user x. 
+4. Search for the number closest to x. 
+5. Print the number entered by the user. 
+6. Print the number closest to x
+
+## R[0] = user's value
+## R[1] = counter (starts at 0) 
+## R[2] = 19 
+## R[3] = 1001 (user number index)
+
+Instructions will start at 0. 
+
+
+# Read in one character or number from console keyboard (Address 0)
+IN 0, 0
+
+# Print out the number to console printer
+OUT 0, 1
+
+# Store the number to memory
+STR 0, 0, 0, 1001[,0]
+
+# Load counter into R[1]
+LDA 1, 0, 0, 0[,0] 
+
+# Load 20 into R[2]
+LDA 2, 0, 0, 19[,0]
+
+# Load 1001 into R[3]
+LDA 3, 0, 0, 1001[,0]
+
+# Subtract 1 from R[3]
+SIR 2, 1
+
+# Add 1 to user Number Index
+AIR 3, 1
+
+# Jump on not equal to 0 to (Address 0)
+JNE 2, 0, 0[,0]
+
+# get the number from the user
+# R[0] will have user's number
+IN 0, 0
+
+# Store the user's number into (Address 1021)
+STR 0, 0, 1021[,0]
+
+# load the first number into R[1]
+LDR 1, 0, 1001[,0]
+
+# Subtract R[1] from R[0]
+SMR 0, 0, 1001[,1]
+
+
+
+
