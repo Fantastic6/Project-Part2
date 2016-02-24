@@ -74,7 +74,7 @@ public class Controller implements Initializable {
                 List<String> ISAList = new ArrayList<String>();
                 if (event.getCode().equals(KeyCode.ENTER)) {
                     Translate translate;
-                    if(terminalTF.getText().trim().split(" ")[0].equals("run")){
+                    if (terminalTF.getText().trim().split(" ")[0].equals("run")) {
                         try (BufferedReader br = new BufferedReader(new FileReader(new File("" + System.getProperty("user.dir").trim()
                                 + "//" + terminalTF.getText().trim().split(" ")[1])))) {
                             String currLine = "";
@@ -93,7 +93,7 @@ public class Controller implements Initializable {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                    }else{
+                    } else {
                         translate = new Translate(terminalTF.getText().trim());
                         translate.stringBuilder();
                     }
@@ -892,7 +892,7 @@ public class Controller implements Initializable {
             public void handle(ActionEvent event) {
                 if (event.getSource().toString().equals(btnSSS.toString())) {
 //                    Main.cpu.setIRValue(1, (short) 1);
-                    Main.cpu.process_instruction(Main.cpu.getPC(),Main.myCache);
+                    Main.cpu.process_instruction(Main.cpu.getPC(), Main.myCache);
 
                     LabelValR0.setText(String.valueOf(Main.cpu.getGPRValue(0)));
                     LabelValR1.setText(String.valueOf(Main.cpu.getGPRValue(1)));

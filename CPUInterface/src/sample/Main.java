@@ -10,7 +10,7 @@ public class Main extends Application {
 
 //    public static Memory memory = new Memory();
     public static CPU cpu = new CPU();
-    public static cache myCache = new cache();
+    public static Cache myCache = new Cache();
 
     public static void main(String[] args) {
         launch(args);
