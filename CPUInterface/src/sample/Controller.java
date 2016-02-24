@@ -707,7 +707,7 @@ public class Controller implements Initializable {
                     btnDisplay.setDisable(false);
                     totalSumInst = Integer.parseInt(TxtValInst.getText().trim());
                     memoryAddress = TxtAddress.getText().trim();
-                    Main.memory.set(Integer.parseInt(memoryAddress), (short) totalSumInst);
+                    Main.myCache.write(Integer.parseInt(memoryAddress), (short) totalSumInst);
                     TxtValInst.setText(null);
 //                    System.out.println(Main.memory.get(Integer.parseInt(memoryAddress)));
                 } else if (event.getSource().toString().equals(Inst_B1.toString())) {
@@ -882,8 +882,8 @@ public class Controller implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if (event.getSource().toString().equals(btnDisplay.toString())) {
-                    TxtValInst.setText(String.valueOf(Main.memory.get(Integer.parseInt(TxtAddress.getText().trim()))));
-                    System.out.println(Main.memory.get(Integer.parseInt(TxtAddress.getText().trim())));
+                    TxtValInst.setText(String.valueOf(Main.myCache.read(Integer.parseInt(TxtAddress.getText().trim()))));
+                    System.out.println(Main.myCache.read(Integer.parseInt(TxtAddress.getText().trim())));
                 }
             }
         };
@@ -892,7 +892,8 @@ public class Controller implements Initializable {
             public void handle(ActionEvent event) {
                 if (event.getSource().toString().equals(btnSSS.toString())) {
 //                    Main.cpu.setIRValue(1, (short) 1);
-                    Main.cpu.process_instruction(Main.cpu.getPC());
+                    Main.cpu.process_instruction(Main.cpu.getPC(),Main.myCache);
+
                     LabelValR0.setText(String.valueOf(Main.cpu.getGPRValue(0)));
                     LabelValR1.setText(String.valueOf(Main.cpu.getGPRValue(1)));
                     LabelValR2.setText(String.valueOf(Main.cpu.getGPRValue(2)));

@@ -8,13 +8,12 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    public static Memory memory = new Memory();
+//    public static Memory memory = new Memory();
     public static CPU cpu = new CPU();
+    public static cache myCache = new cache();
 
     public static void main(String[] args) {
         launch(args);
-        memory.initialize();
-
     }
 
     @Override
