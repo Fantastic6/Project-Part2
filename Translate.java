@@ -344,8 +344,3 @@ public class Translate {
     }
 
 }
-
-public void main(String[] args) {
-    Translate translate = new Translate;
-    translate.stringBuilder();
-}
