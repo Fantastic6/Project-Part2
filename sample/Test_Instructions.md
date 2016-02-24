@@ -1,12 +1,7 @@
 # Test Instructions 
 
-```
 javac sample/Memory.java sample/cache.java sample/CPU.java
-```
-
-```
 java sample.CPU
-```
 
 # JZ
 
@@ -148,26 +143,6 @@ Instruction: 11001 00 10 0 00000 (25728)
 2. Set PC = 10.
 3. Set GPR[0] = 3. 
 4. Check GPR[0]. It should be 0. 
-
-# SRC
-
-Instruction: 011111 11 1 1 0 00011 (32707)
-
-Shift register by 3. 
-
-1. Set R[3] = 7. 
-2. Look at R[3].
-
-
-# RRC
-
-Instruction: 100000 11 1 1 0 00011 (33731)
-
-Rotate register by 3. 
-
-1. Set R[3] = 5. 
-2. Look at R[3].
-
 
 # IN
 

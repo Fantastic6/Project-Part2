@@ -695,10 +695,8 @@ public class CPU
 		//cpu.test_and(cache);
 		//cpu.test_or(cache);
 		//cpu.test_not(cache);
-		//cpu.test_src(cache);
-		cpu.test_rrc(cache);
 		//cpu.test_in(cache);
-		//cpu.test_out(cache);
+		cpu.test_out(cache);
 		
 	}
 
@@ -918,35 +916,6 @@ public class CPU
 		System.out.println("GPR[0]: " + getGPRValue(0));
 		
 	}
-
-	public void test_src(cache cache)
-	{
-		
-		int instruction = 32707;
-		short GPRValue0 = 7;
-		setGPRValue(3, GPRValue0);
-		cache.write(10, (short) instruction);
-
-		
-		process_instruction(10, cache);
-		System.out.println("GPR[3]: " + getGPRValue(3));
-		
-	}
-
-	public void test_rrc(cache cache)
-	{
-		
-		int instruction = 33731;
-		short GPRValue0 = 5;
-		setGPRValue(3, GPRValue0);
-		cache.write(10, (short) instruction);
-
-		
-		process_instruction(10, cache);
-		System.out.println("GPR[3]: " + getGPRValue(3));
-		
-	}
-
 
 	public void test_in(cache cache)
 	{
